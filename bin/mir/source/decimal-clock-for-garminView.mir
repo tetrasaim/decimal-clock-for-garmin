@@ -1,0 +1,210 @@
+[ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [System,3,14,20]; ]
+import Toybox.System;
+[ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 6; @symbol_classdef = [decimal_clock_for_garminView,6,6,34]; @symbol_extends<0> = [WatchUi,6,43,50]; @symbol_extends<1> = [WatchFace,6,51,60]; ]
+class decimal_clock_for_garminView extends WatchUi.WatchFace {
+    [ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; ]
+    function initialize() as Void {
+C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_8_26_10_4_start:
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 9 8 ]
+        symbol [ WatchFace %tmp.2 9 8 17 ];
+        %tmp.2 = getv ? :WatchFace;
+        symbol [ initialize %tmp.3 9 18 28 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_8_26_10_4_stop:
+    }
+    [ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 13; @symbol_functiondef = [onLayout,13,13,21]; @symbol_param<0> = [dc,13,22,24]; @symbol_param<0>_type<0> = [Dc,13,28,30]; ]
+    function onLayout(dc as Dc) as Void {
+C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_13_40_15_4_start:
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 14 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 14 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 14 18 21 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 14 22 29 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ WatchFace %tmp.6 14 30 39 ];
+        %tmp.6 = getv function %tmp.5 :WatchFace;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 14 40 42 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_13_40_15_4_stop:
+    }
+    [ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 18; @symbol_functiondef = [onUpdate,18,13,21]; @symbol_param<0> = [dc,18,22,24]; @symbol_param<0>_type<0> = [Dc,18,28,30]; ]
+    function onUpdate(dc as Dc) as Void {
+C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start:
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 20 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %clockTime.1 = local;
+        symbol [ clockTime %clockTime.1 20 12 21 ];
+        symbol [ System %tmp.1 20 24 30 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.2 20 31 43 ];
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %clockTime.1 %tmp.3;
+        symbol [ clockTime %clockTime.1 20 12 21 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 23 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %totalSeconds.2 = local;
+        symbol [ totalSeconds %totalSeconds.2 23 12 24 ];
+        %tmp.4 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.4 23 28 37 ];
+        symbol [ hour %tmp.5 23 38 42 ];
+        %tmp.5 = getv %tmp.4 :hour;
+        %tmp.6 = 3600;
+        %tmp.7 = mul %tmp.5 %tmp.6;
+        %tmp.8 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.8 23 54 63 ];
+        symbol [ min %tmp.9 23 64 67 ];
+        %tmp.9 = getv %tmp.8 :min;
+        %tmp.10 = 60;
+        %tmp.11 = mul %tmp.9 %tmp.10;
+        %tmp.12 = add %tmp.7 %tmp.11;
+        %tmp.13 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.13 23 76 85 ];
+        symbol [ sec %tmp.14 23 86 89 ];
+        %tmp.14 = getv %tmp.13 :sec;
+        %tmp.15 = add %tmp.12 %tmp.14;
+        lputv %totalSeconds.2 %tmp.15;
+        symbol [ totalSeconds %totalSeconds.2 23 12 24 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 27 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %decimalTotal.3 = local;
+        symbol [ decimalTotal %decimalTotal.3 27 12 24 ];
+        %tmp.16 = lgetv %totalSeconds.2;
+        symbol [ totalSeconds %tmp.16 27 28 40 ];
+        symbol [ toDouble %tmp.17 27 41 49 ];
+        %tmp.17 = getv function %tmp.16 :toDouble;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = 86400.0;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        %tmp.21 = 100000.0;
+        %tmp.22 = mul %tmp.20 %tmp.21;
+        lputv %decimalTotal.3 %tmp.22;
+        symbol [ decimalTotal %decimalTotal.3 27 12 24 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 30 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %dHour.4 = local;
+        symbol [ dHour %dHour.4 30 12 17 ];
+        %tmp.23 = lgetv %decimalTotal.3;
+        symbol [ decimalTotal %tmp.23 30 21 33 ];
+        %tmp.24 = 10000;
+        %tmp.25 = div %tmp.23 %tmp.24;
+        symbol [ toNumber %tmp.26 30 43 51 ];
+        %tmp.26 = getv function %tmp.25 :toNumber;
+        %tmp.27 = invoke %tmp.25 %tmp.26();
+        lputv %dHour.4 %tmp.27;
+        symbol [ dHour %dHour.4 30 12 17 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 31 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %dMin.5 = local;
+        symbol [ dMin %dMin.5 31 12 16 ];
+        %tmp.28 = lgetv %decimalTotal.3;
+        symbol [ decimalTotal %tmp.28 31 20 32 ];
+        symbol [ toNumber %tmp.29 31 33 41 ];
+        %tmp.29 = getv function %tmp.28 :toNumber;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        %tmp.31 = 10000;
+        %tmp.32 = mod %tmp.30 %tmp.31;
+        %tmp.33 = 100;
+        %tmp.34 = div %tmp.32 %tmp.33;
+        lputv %dMin.5 %tmp.34;
+        symbol [ dMin %dMin.5 31 12 16 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 32 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %dSec.6 = local;
+        symbol [ dSec %dSec.6 32 12 16 ];
+        %tmp.35 = lgetv %decimalTotal.3;
+        symbol [ decimalTotal %tmp.35 32 19 31 ];
+        symbol [ toNumber %tmp.36 32 32 40 ];
+        %tmp.36 = getv function %tmp.35 :toNumber;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        %tmp.38 = 100;
+        %tmp.39 = mod %tmp.37 %tmp.38;
+        lputv %dSec.6 %tmp.39;
+        symbol [ dSec %dSec.6 32 12 16 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 35 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %timeString.7 = local;
+        symbol [ timeString %timeString.7 35 12 22 ];
+        symbol [ Lang %tmp.40 35 25 29 ];
+        %tmp.40 = getm $.Toybox.Lang;
+        symbol [ format %tmp.41 35 30 36 ];
+        %tmp.41 = getv function %tmp.40 :format;
+        %tmp.42 = "$1$:$2$:$3$";
+        %tmp.43 = newa 3;
+        %tmp.44 = lgetv %dHour.4;
+        symbol [ dHour %tmp.44 36 12 17 ];
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 0 %tmp.44;
+        %tmp.47 = lgetv %dMin.5;
+        symbol [ dMin %tmp.47 37 12 16 ];
+        symbol [ format %tmp.48 37 17 23 ];
+        %tmp.48 = getv function %tmp.47 :format;
+        %tmp.49 = "%02d";
+        %tmp.50 = invoke %tmp.47 %tmp.48(%tmp.49);
+        %tmp.51 = dup %tmp.46;
+        %tmp.52 = aputv %tmp.51 1 %tmp.50;
+        %tmp.53 = lgetv %dSec.6;
+        symbol [ dSec %tmp.53 38 12 16 ];
+        symbol [ format %tmp.54 38 17 23 ];
+        %tmp.54 = getv function %tmp.53 :format;
+        %tmp.55 = "%02d";
+        %tmp.56 = invoke %tmp.53 %tmp.54(%tmp.55);
+        %tmp.57 = dup %tmp.52;
+        %tmp.58 = aputv %tmp.57 2 %tmp.56;
+        %tmp.59 = invoke %tmp.40 %tmp.41(%tmp.42, %tmp.58);
+        lputv %timeString.7 %tmp.59;
+        symbol [ timeString %timeString.7 35 12 22 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 42 8 ]
+        [ "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_start" "C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop" ]
+        %view.8 = local;
+        symbol [ view %view.8 42 12 16 ];
+        symbol [ View %tmp.61 42 19 23 ];
+        %tmp.61 = getv ? :View;
+        symbol [ findDrawableById %tmp.62 42 24 40 ];
+        %tmp.62 = getv function %tmp.61 :findDrawableById;
+        %tmp.63 = "TimeLabel";
+        %tmp.64 = invoke %tmp.61 %tmp.62(%tmp.63);
+        %tmp.65 = as %tmp.64 Text;
+        symbol [ Text %tmp.65 42 57 61 ];
+        lputv %view.8 %tmp.65;
+        symbol [ view %view.8 42 12 16 ];
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 43 8 ]
+        %tmp.66 = lgetv %view.8;
+        symbol [ view %tmp.66 43 8 12 ];
+        symbol [ setText %tmp.67 43 13 20 ];
+        %tmp.67 = getv function %tmp.66 :setText;
+        %tmp.68 = lgetv %timeString.7;
+        symbol [ timeString %tmp.68 43 21 31 ];
+        invoke %tmp.66 %tmp.67(%tmp.68);
+[ "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc" 46 8 ]
+        symbol [ View %tmp.70 46 8 12 ];
+        %tmp.70 = getv ? :View;
+        symbol [ onUpdate %tmp.71 46 13 21 ];
+        %tmp.71 = getv function %tmp.70 :onUpdate;
+        %tmp.72 = lgetv %dc;
+        symbol [ dc %tmp.72 46 22 24 ];
+        invoke %tmp.70 %tmp.71(%tmp.72);
+C__Users_thefu_GitHub_vs_decimal_clock_for_garmin_source_decimal_clock_for_garminView_mc_18_40_47_4_stop:
+    }
+}
+[ @file = "C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\source\decimal-clock-for-garminView.mc"; @line = 1; ]
+<init> {
+}

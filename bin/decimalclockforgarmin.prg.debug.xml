@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="C:\Users\thefu\GitHub vs\decimal-clock-for-garmin\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="1" lineNum="26" parent="globals" pc="268435460" symbol="getApp"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="1" lineNum="27" parent="globals" pc="268435470" symbol="getApp"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="2" lineNum="6" parent="globals/decimal_clock_for_garminView" pc="268435486" symbol="&lt;init&gt;"/>
+        <entry filename="c:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="3" lineNum="7" parent="globals/Rez" pc="268435505" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="4" lineNum="5" parent="globals/decimal_clock_for_garminApp" pc="268435529" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="5" lineNum="13" parent="globals/decimal_clock_for_garminView" pc="268435548" symbol="onLayout"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="5" lineNum="14" parent="globals/decimal_clock_for_garminView" pc="268435550" symbol="onLayout"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="6" lineNum="8" parent="globals/decimal_clock_for_garminView" pc="268435592" symbol="initialize"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="6" lineNum="9" parent="globals/decimal_clock_for_garminView" pc="268435594" symbol="initialize"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="18" parent="globals/decimal_clock_for_garminView" pc="268435613" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="20" parent="globals/decimal_clock_for_garminView" pc="268435617" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="23" parent="globals/decimal_clock_for_garminView" pc="268435634" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="27" parent="globals/decimal_clock_for_garminView" pc="268435674" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="30" parent="globals/decimal_clock_for_garminView" pc="268435699" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="31" parent="globals/decimal_clock_for_garminView" pc="268435718" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="32" parent="globals/decimal_clock_for_garminView" pc="268435743" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="35" parent="globals/decimal_clock_for_garminView" pc="268435762" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="42" parent="globals/decimal_clock_for_garminView" pc="268435848" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="43" parent="globals/decimal_clock_for_garminView" pc="268435876" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminView.mc" id="7" lineNum="46" parent="globals/decimal_clock_for_garminView" pc="268435890" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="8" lineNum="12" parent="globals/decimal_clock_for_garminApp" pc="268435915" symbol="onStart"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="9" lineNum="20" parent="globals/decimal_clock_for_garminApp" pc="268435918" symbol="getInitialView"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="9" lineNum="21" parent="globals/decimal_clock_for_garminApp" pc="268435920" symbol="getInitialView"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="10" lineNum="7" parent="globals/decimal_clock_for_garminApp" pc="268435957" symbol="initialize"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="10" lineNum="8" parent="globals/decimal_clock_for_garminApp" pc="268435959" symbol="initialize"/>
+        <entry filename="C:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\source\\decimal-clock-for-garminApp.mc" id="11" lineNum="16" parent="globals/decimal_clock_for_garminApp" pc="268435978" symbol="onStop"/>
+        <entry filename="c:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="12" lineNum="13" parent="globals/Rez/Layouts" pc="268435981" symbol="WatchFace"/>
+        <entry filename="c:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="12" lineNum="14" parent="globals/Rez/Layouts" pc="268435993" symbol="WatchFace"/>
+        <entry filename="c:\\Users\\thefu\\GitHub vs\\decimal-clock-for-garmin\\bin\\gen\\006-B3869-00\\source\\Rez.mcgen" id="12" lineNum="16" parent="globals/Rez/Layouts" pc="268436146" symbol="WatchFace"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="7" object="true" symbol="decimal_clock_for_garminView"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="10" symbol="AppName"/>
+        <entry id="5" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="8389375" method="true" object="true" symbol="WatchFace"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389348" symbol="font"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="4" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="8389349" symbol="justification"/>
+        <entry id="6" object="true" symbol="decimal_clock_for_garminApp"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="9" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry field="true" id="8389347" symbol="color"/>
+        <entry id="8" module="true" symbol="Layouts"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435591" name="dc" stackId="1" startPc="268435548"/>
+        <entry arg="true" endPc="268435914" name="dc" stackId="1" startPc="268435613"/>
+        <entry endPc="268435913" name="clockTime" stackId="2" startPc="268435617"/>
+        <entry endPc="268435913" name="totalSeconds" stackId="3" startPc="268435617"/>
+        <entry endPc="268435913" name="decimalTotal" stackId="4" startPc="268435617"/>
+        <entry endPc="268435913" name="dHour" stackId="5" startPc="268435617"/>
+        <entry endPc="268435913" name="dMin" stackId="6" startPc="268435617"/>
+        <entry endPc="268435913" name="dSec" stackId="7" startPc="268435617"/>
+        <entry endPc="268435913" name="timeString" stackId="8" startPc="268435617"/>
+        <entry endPc="268435913" name="view" stackId="9" startPc="268435617"/>
+        <entry arg="true" endPc="268436162" name="dc" stackId="1" startPc="268435981"/>
+        <entry endPc="268436162" name="rez_cmp_local_text_TimeLabel" stackId="2" startPc="268435993"/>
+    </localVars>
+    <deviceInfo deviceVersion="bb3887dffaa22ce965b5fe681a1cee6986d833ca" partNumber="006-B3869-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="63" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/decimal_clock_for_garminView" offset="134" parentId="globals" symbolId="decimal_clock_for_garminView" type="class"/>
+        <dataEntry label="globals/Rez" offset="197" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/decimal_clock_for_garminApp" offset="252" parentId="globals" symbolId="decimal_clock_for_garminApp" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="323" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="362" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="401" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435485" name="getApp" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435504" name="&lt;init&gt;" parent="decimal_clock_for_garminView" startPc="268435486">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435528" name="&lt;init&gt;" parent="Rez" startPc="268435505">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435547" name="&lt;init&gt;" parent="decimal_clock_for_garminApp" startPc="268435529">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435591" name="onLayout" parent="decimal_clock_for_garminView" startPc="268435548">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435612" name="initialize" parent="decimal_clock_for_garminView" startPc="268435592">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435914" name="onUpdate" parent="decimal_clock_for_garminView" startPc="268435613">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435917" name="onStart" parent="decimal_clock_for_garminApp" startPc="268435915">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435956" name="getInitialView" parent="decimal_clock_for_garminApp" startPc="268435918">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435977" name="initialize" parent="decimal_clock_for_garminApp" startPc="268435957">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435980" name="onStop" parent="decimal_clock_for_garminApp" startPc="268435978">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436162" name="WatchFace" parent="Layouts" startPc="268435981">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>
