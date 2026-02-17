@@ -1,0 +1,19 @@
+name: Build Garmin Watchface
+on: [push] # זה אומר שכל פעם שתעשה Push, הוא יבנה את השעון
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Create Key File
+        # כאן הוא שולף את הסוד מהכספת והופך אותו בחזרה לקובץ מפתח
+        run: echo "${{ secrets.GARMIN_DEV_KEY }}" | base64 -d > developer_key.der
+
+      - name: Build with Monkey C
+        uses: jasonreeder/monkeyc-build-action@v1
+        with:
+          project_dir: '.'
+          developer_key: 'developer_key.der'
