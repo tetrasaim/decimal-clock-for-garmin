@@ -4,6 +4,8 @@ import Toybox.System;
 import Toybox.Lang;
 import Toybox.Time;
 import Toybox.Time.Gregorian;
+import Toybox.ActivityMonitor;
+import Toybox.Activity;
 
 class decimal_clock_for_garminView extends WatchUi.WatchFace {
 
@@ -117,7 +119,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         }
 
         var regularTime = Lang.format("$1$:$2$", [
-            clockTime.hour.format("%02d"),
+            clockTime.hour,
             clockTime.min.format("%02d")
         ]);
 
@@ -135,14 +137,10 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         var hourLen = (radius.toDouble() * 0.5).toNumber();
         var minLen  = (radius.toDouble() * 0.72).toNumber();
 
-        // --- 7. עיגול ---
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.setPenWidth(2);
-        dc.drawCircle(cx, cy, radius);
-
         // --- 8. מספרים 0–9 ---
         var numR    = radius - 14;
         var numbers = ["0","1","2","3","4","5","6","7","8","9"];
+        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
         for (var i = 0; i < 10; i++) {
             var ang = (i * 36.0 - 90.0) * (Math.PI / 180.0);
             var nx  = (cx.toDouble() + numR.toDouble() * Math.cos(ang)).toNumber();
@@ -151,9 +149,9 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
                         Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
         }
 
-        // --- 9. מחוג שעות (צהוב, עבה) ---
+        // --- 9. מחוג שעות (אדום, עבה) ---
         var hRad = (hourAngle - 90.0) * (Math.PI / 180.0);
-        dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(5);
         dc.drawLine(cx, cy,
             (cx.toDouble() + hourLen.toDouble() * Math.cos(hRad)).toNumber(),
@@ -161,7 +159,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
 
         // --- 10. מחוג דקות (לבן) ---
         var mRad = (minAngle - 90.0) * (Math.PI / 180.0);
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(3);
         dc.drawLine(cx, cy,
             (cx.toDouble() + minLen.toDouble() * Math.cos(mRad)).toNumber(),
@@ -171,19 +169,70 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.fillCircle(cx, cy, 5);
 
-        // --- 12. תאריך עשרוני — מעל המרכז ---
+        // --- 12. שעה גרגוריאנית — FONT_XTINY ---
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        var timeX = cx;
+        var timeY = cy - (radius.toDouble() * 0.60).toNumber();
+        dc.drawText(timeX, timeY, Graphics.FONT_XTINY, regularTime,
+                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+
+        // --- 13. תאריך עשרוני — מעל המרכז ---
         dc.setColor(Graphics.COLOR_ORANGE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, cy - (radius.toDouble() * 0.38).toNumber(),
                     Graphics.FONT_SMALL, dateStr, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // --- 13. שעה עשרונית — מתחת למרכז ---
+        // --- 14. שעה עשרונית — מתחת למרכז ---
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, cy + (radius.toDouble() * 0.28).toNumber(),
                     Graphics.FONT_SMALL, decTimeStr, Graphics.TEXT_JUSTIFY_CENTER);
 
-        // --- 14. שעה גרגוריאנית — בתחתית ---
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy + (radius.toDouble() * 0.62).toNumber(),
-                    Graphics.FONT_SMALL, regularTime, Graphics.TEXT_JUSTIFY_CENTER);
+        // --- 15. צעדים (שמאל) ודופק (ימין) — בצדדים, בתוך עיגולים עם אייקון ---
+        var sideY  = cy;
+        var sideR  = 18; // רדיוס העיגול
+        var sideOffset = (radius.toDouble() * 0.55).toNumber();
+        var leftX  = cx - sideOffset;
+        var rightX = cx + sideOffset;
+
+        // --- עיגול צעדים (שמאל, ירוק) ---
+        var actInfo = ActivityMonitor.getInfo();
+        var stepsStr = "--";
+        if (actInfo != null && actInfo.steps != null) {
+            stepsStr = actInfo.steps.toString();
+        }
+        dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
+        dc.setPenWidth(2);
+        dc.drawCircle(leftX, sideY, sideR);
+
+        // אייקון צעדים: שתי רגליים (שני מלבנים קטנים) — הועלה מעלה ב-3 פיקסלים
+        dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
+        dc.fillRectangle(leftX - 4, sideY - 14, 3, 5);
+        dc.fillRectangle(leftX + 1, sideY - 12, 3, 5);
+        // מספר צעדים — הורד מטה ב-2 פיקסלים
+        dc.drawText(leftX, sideY + 6,
+                    Graphics.FONT_XTINY, stepsStr,
+                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+
+        // --- עיגול דופק (ימין, אדום) ---
+        var hrStr = "--";
+        var activityInfo = Activity.getActivityInfo();
+        if (activityInfo != null && activityInfo.currentHeartRate != null) {
+            hrStr = activityInfo.currentHeartRate.toString();
+        }
+        dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_TRANSPARENT);
+        dc.setPenWidth(2);
+        dc.drawCircle(rightX, sideY, sideR);
+
+        // אייקון לב: שתי קשתות + משולש למטה
+        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+        dc.setPenWidth(1);
+        dc.drawArc(rightX - 3, sideY - 8, 4, Graphics.ARC_COUNTER_CLOCKWISE, 0, 180);
+        dc.drawArc(rightX + 3, sideY - 8, 4, Graphics.ARC_COUNTER_CLOCKWISE, 0, 180);
+        // שני קווים אלכסוניים לנקודה תחתית
+        dc.drawLine(rightX - 6, sideY - 8, rightX,     sideY - 2);
+        dc.drawLine(rightX + 6, sideY - 8, rightX,     sideY - 2);
+        // מספר דופק
+        dc.drawText(rightX, sideY + 4,
+                    Graphics.FONT_XTINY, hrStr,
+                    Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
     }
 }
