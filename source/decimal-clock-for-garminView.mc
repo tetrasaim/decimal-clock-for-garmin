@@ -167,7 +167,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
 
         // --- 15. צעדים (שמאל) ודופק (ימין) ---
         var sideY  = cy;
-        var sideR  = 18;
+        var sideR  = 26;  // הוגדל מ-18 ל-26
         var sideOffset = (radius.toDouble() * 0.55).toNumber();
         var leftX  = cx - sideOffset;
         var rightX = cx + sideOffset;
@@ -183,9 +183,9 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         dc.drawCircle(leftX, sideY, sideR);
 
         dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
-        dc.fillRectangle(leftX - 4, sideY - 14, 3, 5);
-        dc.fillRectangle(leftX + 1, sideY - 12, 3, 5);
-        dc.drawText(leftX, sideY + 6,
+        dc.fillRectangle(leftX - 4, sideY - 18, 3, 6);
+        dc.fillRectangle(leftX + 1, sideY - 15, 3, 6);
+        dc.drawText(leftX, sideY + 8,
                     Graphics.FONT_XTINY, stepsStr,
                     Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
@@ -201,11 +201,11 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
 
         dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(1);
-        dc.drawArc(rightX - 3, sideY - 8, 4, Graphics.ARC_COUNTER_CLOCKWISE, 0, 180);
-        dc.drawArc(rightX + 3, sideY - 8, 4, Graphics.ARC_COUNTER_CLOCKWISE, 0, 180);
-        dc.drawLine(rightX - 6, sideY - 8, rightX, sideY - 2);
-        dc.drawLine(rightX + 6, sideY - 8, rightX, sideY - 2);
-        dc.drawText(rightX, sideY + 4,
+        dc.drawArc(rightX - 4, sideY - 12, 5, Graphics.ARC_COUNTER_CLOCKWISE, 0, 180);
+        dc.drawArc(rightX + 4, sideY - 12, 5, Graphics.ARC_COUNTER_CLOCKWISE, 0, 180);
+        dc.drawLine(rightX - 8, sideY - 12, rightX, sideY - 4);
+        dc.drawLine(rightX + 8, sideY - 12, rightX, sideY - 4);
+        dc.drawText(rightX, sideY + 8,
                     Graphics.FONT_XTINY, hrStr,
                     Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
