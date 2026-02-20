@@ -117,14 +117,16 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
             dateStr = Lang.format("$1$/$2$", [decMonth + 1, decDay]);
         }
 
-        var regularTime = Lang.format("$1$:$2$", [
+        var regularTime = Lang.format("$1$:$2$:$3$", [
             clockTime.hour,
-            clockTime.min.format("%02d")
+            clockTime.min.format("%02d"),
+            clockTime.sec.format("%02d")
         ]);
 
-        var decTimeStr = Lang.format("$1$:$2$", [
+        var decTimeStr = Lang.format("$1$:$2$:$3$", [
             dHour,
-            dMin.format("%02d")
+            dMin.format("%02d"),
+            dSec.format("%02d")
         ]);
 
         // --- 5. זוויות מחוגים ---
@@ -135,6 +137,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         var radius  = (width < height ? width : height) / 2 - 4;
         var hourLen = (radius.toDouble() * 0.5).toNumber();
         var minLen  = (radius.toDouble() * 0.72).toNumber();
+
 
         // --- 8. מספרים 0–9 ---
         var numR    = radius - 14;
