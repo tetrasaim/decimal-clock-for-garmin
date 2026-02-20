@@ -168,7 +168,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         // --- 15. צעדים (שמאל) ודופק (ימין) ---
         var sideY  = cy;
         var sideR  = 26;  // הוגדל מ-18 ל-26
-        var sideOffset = (radius.toDouble() * 0.55).toNumber();
+        var sideOffset = (radius.toDouble() * 0.42).toNumber();
         var leftX  = cx - sideOffset;
         var rightX = cx + sideOffset;
 
