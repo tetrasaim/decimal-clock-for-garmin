@@ -6,6 +6,7 @@ import Toybox.Time;
 import Toybox.Time.Gregorian;
 import Toybox.ActivityMonitor;
 import Toybox.Activity;
+import Toybox.Timer;
 
 class decimal_clock_for_garminView extends WatchUi.WatchFace {
 
@@ -14,11 +15,30 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         "VII","VIII","IX","X","XI","XII"
     ];
 
+    var _timer as Timer.Timer?;
+
     function initialize() {
         WatchFace.initialize();
+        _timer = null;
     }
 
     function onLayout(dc as Dc) as Void {
+    }
+
+    function onShow() as Void {
+        _timer = new Timer.Timer();
+        (_timer as Timer.Timer).start(method(:onTick), 1000, true);
+    }
+
+    function onHide() as Void {
+        if (_timer != null) {
+            (_timer as Timer.Timer).stop();
+            _timer = null;
+        }
+    }
+
+    function onTick() as Void {
+        WatchUi.requestUpdate();
     }
 
     function getAbsoluteDays(d as Number, m as Number, y as Number) as Number {
@@ -138,7 +158,6 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         var hourLen = (radius.toDouble() * 0.5).toNumber();
         var minLen  = (radius.toDouble() * 0.72).toNumber();
 
-
         // --- 8. מספרים 0–9 ---
         var numR    = radius - 14;
         var numbers = ["0","1","2","3","4","5","6","7","8","9"];
@@ -170,7 +189,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
 
         // --- 15. צעדים (שמאל) ודופק (ימין) ---
         var sideY  = cy;
-        var sideR  = 26;  // הוגדל מ-18 ל-26
+        var sideR  = 26;
         var sideOffset = (radius.toDouble() * 0.42).toNumber();
         var leftX  = cx - sideOffset;
         var rightX = cx + sideOffset;
@@ -213,7 +232,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
                     Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
         // =====================================================
-        // מחוגים — מצוירים אחרונים = שכבה קדמית, מסתירים הכל
+        // מחוגים — מצוירים אחרונים = שכבה קדמית
         // =====================================================
 
         // --- מחוג שעות (לבן, עבה) ---
