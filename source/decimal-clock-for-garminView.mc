@@ -134,7 +134,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
             var extraNames = ["a", "b", "c", "d", "e", "Tld"];
             dateStr = extraNames[decDay];
         } else {
-            dateStr = Lang.format("$1$/$2$", [decMonth + 1, decDay]);
+            dateStr = Lang.format("$1$/$2$", [decDay, decMonth + 1]);
         }
 
         var regularTime = Lang.format("$1$:$2$:$3$", [
