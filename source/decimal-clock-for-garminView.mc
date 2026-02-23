@@ -102,6 +102,43 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         return [extraIdx, -1];
     }
 
+    function censorString(s as String) as String {
+        var result = "";
+        var i = 0;
+        var len = s.length();
+        while (i < len) {
+            var ch = s.substring(i, i + 1);
+            if (ch.equals("6")) {
+                var j = i + 1;
+                while (j < len) {
+                    var next = s.substring(j, j + 1);
+                    if (next.equals(":") || next.equals("/")) {
+                        j++;
+                    } else {
+                        break;
+                    }
+                }
+                if (j < len && s.substring(j, j + 1).equals(((66+1) % 10).toString())) {
+                    result += "6";
+                    var k = i + 1;
+                    while (k < j) {
+                        result += s.substring(k, k + 1);
+                        k++;
+                    }
+                    result += "*";
+                    i = j + 1;
+                } else {
+                    result += ch;
+                    i++;
+                }
+            } else {
+                result += ch;
+                i++;
+            }
+        }
+        return result;
+    }
+
     function onUpdate(dc as Dc) as Void {
         var width  = dc.getWidth();
         var height = dc.getHeight();
@@ -134,20 +171,20 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
             var extraNames = ["a", "b", "c", "d", "e", "Tld"];
             dateStr = extraNames[decDay];
         } else {
-            dateStr = Lang.format("$1$/$2$", [decDay, decMonth + 1]);
+            dateStr = censorString(Lang.format("$1$/$2$", [decDay, decMonth + 1]));
         }
 
-        var regularTime = Lang.format("$1$:$2$:$3$", [
+        var regularTime = censorString(Lang.format("$1$:$2$:$3$", [
             clockTime.hour,
             clockTime.min.format("%02d"),
             clockTime.sec.format("%02d")
-        ]);
+        ]));
 
-        var decTimeStr = Lang.format("$1$:$2$:$3$", [
+        var decTimeStr = censorString(Lang.format("$1$:$2$:$3$", [
             dHour,
             dMin.format("%02d"),
             dSec.format("%02d")
-        ]);
+        ]));
 
         // --- 5. זוויות מחוגים ---
         var hourAngle = dHour.toDouble() * 36.0 + dMin.toDouble() / 100.0 * 36.0;
@@ -198,7 +235,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         var actInfo = ActivityMonitor.getInfo();
         var stepsStr = "--";
         if (actInfo != null && actInfo.steps != null) {
-            stepsStr = actInfo.steps.toString();
+            stepsStr = censorString(actInfo.steps.toString());
         }
         dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(2);
@@ -215,7 +252,7 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         var hrStr = "--";
         var activityInfo = Activity.getActivityInfo();
         if (activityInfo != null && activityInfo.currentHeartRate != null) {
-            hrStr = activityInfo.currentHeartRate.toString();
+            hrStr = censorString(activityInfo.currentHeartRate.toString());
         }
         dc.setColor(Graphics.COLOR_DK_GREEN, Graphics.COLOR_TRANSPARENT);
         dc.setPenWidth(2);
