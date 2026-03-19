@@ -11,8 +11,8 @@ import Toybox.Timer;
 class decimal_clock_for_garminView extends WatchUi.WatchFace {
 
     var MONTH_NAMES = [
-        "I","II","III","IV","V",
-        "VI","VII","VIII","IX","X"
+        "I","II","III","IV","V","VI",
+        "VII","VIII","IX","X","XI","XII"
     ];
 
     var _timer as Timer.Timer?;
@@ -94,8 +94,8 @@ class decimal_clock_for_garminView extends WatchUi.WatchFace {
         }
 
         if (remaining < 360) {
-            var mIdx = remaining / 36;
-            var d    = (remaining % 36) + 1;
+            var mIdx = remaining / 30;
+            var d    = (remaining % 30) + 1;
             return [d, mIdx];
         }
         var extraIdx = remaining - 360;
